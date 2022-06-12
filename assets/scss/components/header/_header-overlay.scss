@@ -1,0 +1,9 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.header-overlay {
+    background-color: $color-primary;
+    position: absolute;
+    inset: 0;
+    opacity: 0.8;
+}

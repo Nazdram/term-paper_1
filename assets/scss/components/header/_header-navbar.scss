@@ -1,0 +1,106 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.header-navbar {
+    @include md {
+        display: flex;
+        justify-content: flex-end;
+    }   
+    &__list {
+        @include md-min {
+            display: grid;
+            gap: $gap;
+            grid-template-columns: repeat(auto-fit, minmax(2em, max-content));
+            justify-content: end;
+        
+        @include unlist(0 -10px 0 0);
+        }
+        @include md {
+            display: none;
+            @include unlist;
+            background-color: rgba(68, 89, 110, 0.5);
+            position: absolute;
+            top: 100%;
+            right: 0;
+            text-align: center;
+            @include box-shadow;
+        
+
+        &--active {
+            display: block !important;
+            
+        }
+    }
+
+    &__item {
+        
+    }
+    &__link {
+        font-size: 1.125rem;
+        display: block;
+        transition: color 0.5s;
+        
+        @include md-min {
+            padding: $gap-sm 10px;
+        }
+        @include md {
+            padding: 10px $gap-sm;
+        }
+
+        &:focus,
+        &:hover {
+            color: $color-accent;
+        } 
+    }
+    
+    &__btn {
+        @include md-min {
+            display: none;
+        }
+
+        width: 30px;
+        height: 22.5px;
+        position: relative;
+        margin: 25px 0;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        &-row {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: $color-light;
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+            &:nth-child(1) {
+                top: 0px;
+            }
+            &:nth-child(2) {
+                top: 9px;
+            }
+            &:nth-child(3) {
+                top: 18px;
+            }
+        }
+        &--active span {
+            &:nth-child(1) {
+                top: 9px;
+                transform: rotate(135deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+                left: -60px;
+            }
+            &:nth-child(3) {
+                top: 9px;
+                transform: rotate(-135deg);
+            }
+        }
+    }
+    
+}
+}
