@@ -1,2 +1,41 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
+
+.post {
+}
+.post_container {
+    max-width: 1340px;
+    min-height: 100vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    background-color: burlywood;
+}
+.post_grid {
+    display: grid;
+    grid-template-areas: "b1 b1 b2 b3", "b4 b5 b6 b6";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 550px;
+    gap: 20px;
+}
+.post_item {
+    
+}
+.post_item:nth-last-of-type(6) {
+    grid-area: b6;
+}
+.post_item:nth-last-of-type(5) {
+    grid-area: b5;
+}
+.post_item:nth-last-of-type(4) {
+    grid-area: b4;
+}
+.post_item:nth-last-of-type(3) {
+    grid-area: b3;
+}
+.post_item:nth-last-of-type(2) {
+    grid-area: b2;
+}
+.post_item:nth-last-of-type(1) {
+    grid-area: b1;
+}

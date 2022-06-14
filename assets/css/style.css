@@ -754,6 +754,48 @@ button:focus, button:hover {
   width: 420px;
   height: 60px;
 }
+
+.post_container {
+  max-width: 1340px;
+  min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  background-color: burlywood;
+}
+
+.post_grid {
+  display: grid;
+  grid-template-areas: "b1 b1 b2 b3", "b4 b5 b6 b6";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 550px;
+  gap: 20px;
+}
+
+.post_item:nth-last-of-type(6) {
+  grid-area: b6;
+}
+
+.post_item:nth-last-of-type(5) {
+  grid-area: b5;
+}
+
+.post_item:nth-last-of-type(4) {
+  grid-area: b4;
+}
+
+.post_item:nth-last-of-type(3) {
+  grid-area: b3;
+}
+
+.post_item:nth-last-of-type(2) {
+  grid-area: b2;
+}
+
+.post_item:nth-last-of-type(1) {
+  grid-area: b1;
+}
+
 @media (min-width: 576px) {
   .btn--primary {
     width: 350px;
@@ -765,11 +807,13 @@ button:focus, button:hover {
     margin-bottom: 30px;
   }
 }
+
 @media (min-height: 691px) {
   .skills__container {
     grid-auto-rows: calc(33.333333vh - 13.333333px);
   }
 }
+
 @media (min-width: 768px) {
   .header-navbar__list {
     display: grid;
@@ -790,6 +834,7 @@ button:focus, button:hover {
     display: none;
   }
 }
+
 @media (min-width: 992px) {
   h1 {
     font-size: 3.75rem;
@@ -809,11 +854,13 @@ button:focus, button:hover {
     font-size: 1.25rem;
   }
 }
+
 @media (max-width: 991.8px) {
   .skill-item__title {
     font-size: 1.125rem;
   }
 }
+
 @media (max-width: 991.8px) and (min-width: 768px) {
   h1 {
     font-size: 2.5rem;
@@ -829,6 +876,7 @@ button:focus, button:hover {
     grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
   }
 }
+
 @media (max-width: 767.8px) {
   h1 {
     font-size: 1.875rem;
@@ -873,16 +921,19 @@ button:focus, button:hover {
     margin: 0 0 33px;
   }
 }
+
 @media (max-width: 767.8px) and (min-width: 576px) {
   .skills__container {
     grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
   }
 }
+
 @media (max-height: 690px) {
   .skills__container {
     grid-auto-rows: 216.666667px;
   }
 }
+
 @media (max-width: 575.8px) {
   .btn--primary {
     width: 100%;
