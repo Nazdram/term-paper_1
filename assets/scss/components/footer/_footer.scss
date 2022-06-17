@@ -13,5 +13,40 @@
     padding-right: 20px;
 }
 .footer__social {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+    justify-content: center;
+    margin-bottom: 40px;
+    font-size: 35px;
+}
+.footer__social a {
+    display: block;
+    padding: 10px;
+}
+.footer__social::after {
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 37.5px);
+    width: 75px;
+    height: 2px;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.1)
+}
+.footer__social a {
 
 }
+.footer__initials {
+    color: $color-light;
+}
+.footer__initials span:nth-of-type(1) {
+    margin-right: -0.5em;
+    letter-spacing: 0.33em;
+    font-weight: 100
+}
+.footer__initials span:nth-of-type(2) {
+    letter-spacing: 0.05em;
+    color: #e5e5e5;
+    font-weight: 700;
+}
+  

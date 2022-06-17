@@ -733,12 +733,8 @@ button:focus, button:hover {
   padding: 30px 0;
 }
 .form__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   max-width: 1340px;
   margin: 0 auto;
 }
@@ -751,13 +747,13 @@ button:focus, button:hover {
   border-bottom-color: rgba(255, 255, 255, 0.25);
   background-color: rgba(255, 255, 255, 0.05);
   font-size: 1.125rem;
-  width: 420px;
+  width: 420px !important;
   height: 60px;
 }
 
 .post {
   padding-top: 70px;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
 }
 
 .post_container {
@@ -819,16 +815,11 @@ button:focus, button:hover {
 
 .post_item-text {
   height: 250px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 20px;
 }
 
 .post_item-text h3 {
@@ -840,6 +831,7 @@ button:focus, button:hover {
 .post_item-text p {
   color: #637588;
   font-size: 1rem;
+  letter-spacing: 0.4px;
 }
 
 .post_button {
@@ -866,6 +858,49 @@ button:focus, button:hover {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.footer__social {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, -webkit-max-content));
+  grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 40px;
+  font-size: 35px;
+}
+
+.footer__social a {
+  display: block;
+  padding: 10px;
+}
+
+.footer__social::after {
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 37.5px);
+  width: 75px;
+  height: 2px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer__initials {
+  color: #ffffff;
+}
+
+.footer__initials span:nth-of-type(1) {
+  margin-right: -0.5em;
+  letter-spacing: 0.33em;
+  font-weight: 100;
+}
+
+.footer__initials span:nth-of-type(2) {
+  letter-spacing: 0.05em;
+  color: #e5e5e5;
+  font-weight: 700;
 }
 
 @media (min-width: 576px) {
